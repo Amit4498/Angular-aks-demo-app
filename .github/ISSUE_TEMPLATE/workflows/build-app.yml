@@ -5,7 +5,8 @@ name: Build-angular-app
 
 on:
   push:
-    branches: [ "develop" ]
+    branches:
+      - develop
 
 jobs:
   app-bild:
