@@ -4,7 +4,9 @@
 name: Build-angular-app
 
 on:
-  workflow_dispatch: 
+  push:
+    branches:
+      - develop
 
 jobs:
   app-bild:
