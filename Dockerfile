@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . /app/
 RUN npm i --legacy-peer-deps
 RUN npm run build
-EXPOSE 4200
+
 
 
 FROM nginx:alpine

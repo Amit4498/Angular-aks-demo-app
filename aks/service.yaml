@@ -1,9 +1,14 @@
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
-  name: angular-app-ser
-  labels: 
-    app: sample-app
+  name: angular-aks-service
 
 spec:
-  type: loadbalancer
+  selector:
+    app: sample-angular-app
+  type: LoadBalancer
+  ports:
+    - port: 80
+      name: http
+    - port: 443
+      name: https
