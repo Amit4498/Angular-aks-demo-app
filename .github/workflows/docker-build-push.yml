@@ -68,4 +68,4 @@ jobs:
           # Push is a shorthand for --output=type=registry
           push: true
           # List of tags
-          tags: amit4498/aks-angular-app:angulartourofhero
+          tags: amit4498/aks-angular-app:latest
