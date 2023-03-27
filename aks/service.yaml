@@ -5,7 +5,7 @@ metadata:
 
 spec:
   selector:
-    app: sample-angular-app
+    app: angular-aks-app
   type: LoadBalancer
   ports:
     - port: 80

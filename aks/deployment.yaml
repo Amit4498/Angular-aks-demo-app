@@ -6,12 +6,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: sample-angular-app
+      app: angular-aks-app
   replicas: 2
   template:
     metadata:
       labels:
-        app: sample-angular-app
+        app: angular-aks-app
     spec:
       containers:
       - name: angular-aks-sample-app
