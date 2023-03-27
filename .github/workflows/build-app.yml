@@ -3,10 +3,13 @@
 
 name: Build-angular-app
 
+# on:
+#   push:
+#     branches:
+#       - develop
+
 on:
-  push:
-    branches:
-      - develop
+  workflow_dispatch:
 
 jobs:
   app-bild:
