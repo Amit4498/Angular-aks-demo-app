@@ -14,7 +14,7 @@ jobs:
       - name: Running reusable build action
         uses: ./.github/actions/
         with:
-          app-directory: '.'
+          app-dir: '.'
 
       - name: Running list for build contents
         run: |
