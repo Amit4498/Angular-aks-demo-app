@@ -22,7 +22,7 @@ runs:
 
     - name: Install node dependecy
       working-directory: ${{ inputs.app-dir }}
-      run: npm i
+      run: npm i --legacy-peer-deps
       shell: bash
 
     - name: Run test
