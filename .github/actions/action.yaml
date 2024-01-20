@@ -22,7 +22,7 @@ runs:
 
     - name: Install node dependecy
       working-directory: ${{ inputs.app-dir }}
-      run: npm ci
+      run: npm i
       shell: bash
 
     - name: Run test
