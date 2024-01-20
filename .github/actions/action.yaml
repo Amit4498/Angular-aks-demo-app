@@ -11,10 +11,6 @@ inputs:
     type: string
     default: build
     required: false
-  app-dir:
-    description: "The dir of the package.json"
-    type: string
-    required: true
 
 runs:
   using: "composite"
