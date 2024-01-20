@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Running reusable build action
-        uses: ./github/actions
+        uses: ./github/actions/
         with:
           app-dir: "."
 
