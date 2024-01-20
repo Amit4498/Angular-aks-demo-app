@@ -1,0 +1,45 @@
+name: build action for npm
+desscription: Reusable action for node apps
+
+inputs:
+  app-dir:
+    description: "The dir of the package.json"
+    type: stirng
+    required: true
+  build-script:
+    description: "Specific script to build"
+    type: stirng
+    default: build
+    required: false
+  app-dir:
+    description: "The dir of the package.json"
+    type: stirng
+    required: true
+
+runs:
+  using: "composite"
+  steps: 
+    - name: Use Node ver found in .nvmrc file
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: ${{ inputs.app-dir }}/.nvmrc
+
+    - name: Install node dependecy
+      working-directory: ${{ inputs.app-dir }}
+      run: npm ci
+      shell: bash
+
+    - name: Run test
+      working-directory: ${{ inputs.app-dir }}
+      run: npm run test
+      shell: bash
+
+    - name: Lint
+      working-directory: ${{ inputs.app-dir }}
+      run: npm run lint
+      shell: bash
+
+    - name: Build
+      working-directory: ${{ inputs.app-dir }}
+      run: npm run ${{ inputs.build-script }}    
+      shell: bash
