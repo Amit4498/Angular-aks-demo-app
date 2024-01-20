@@ -1,19 +1,19 @@
 name: build action for npm
-desscription: Reusable action for node apps
+description: Reusable action for node apps
 
 inputs:
   app-dir:
     description: "The dir of the package.json"
-    type: stirng
+    type: string
     required: true
   build-script:
     description: "Specific script to build"
-    type: stirng
+    type: string
     default: build
     required: false
   app-dir:
     description: "The dir of the package.json"
-    type: stirng
+    type: string
     required: true
 
 runs:
