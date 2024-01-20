@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # - uses: actions/checkout@v3
+      - name: Running list for build contents
+        run: |
+          ls -lart
+          
       - name: Running reusable build action
         uses: ./github/actions/
         with:
