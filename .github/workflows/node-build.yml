@@ -1,6 +1,6 @@
 name: Build by Reusable
 on:
-  workflow_disapatch:
+  workflow_dispatch:
 
 jobs:
   Node-build:
