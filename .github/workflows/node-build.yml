@@ -12,7 +12,7 @@ jobs:
           ls -lart
           
       - name: Running reusable build action
-        uses: ./github/actions/
+        uses: ./.github/actions/
         with:
           app-dir: "."
 
