@@ -1,5 +1,5 @@
-name : create release 
-run-name: Creating release on branch ${{ gitub.head_ref || github.ref_name }} by @${{ github.actor }}
+name: create release 
+run-name: Creating release on branch ${{ github.head_ref || github.ref_name }} by @${{ github.actor }}
 
 on:
   workflow_dispatch:
@@ -26,7 +26,7 @@ jobs:
   build-app:
     runs-on: ubuntu-release
     steps:
-      - name: Runnning build action using reusable 
+      - name: Running build action using reusable 
         uses: ./.github/actions/
         with:
           app-dir: '.'
