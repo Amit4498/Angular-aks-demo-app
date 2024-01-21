@@ -4,7 +4,7 @@ run-name: Creating release on branch ${{ github.head_ref || github.ref_name }} b
 on:
   workflow_dispatch:
     inputs:
-      tags:
+      tag:
         description: release tag
         type: string
         required: true
