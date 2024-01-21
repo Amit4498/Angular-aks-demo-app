@@ -1,0 +1,39 @@
+name : create release 
+run-name: Creating release on branch ${{ gitub.head_ref || github.ref_name }} by @${{ github.actor }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: release tag
+        type: string
+        required: true
+
+env:
+  REPO: ${{ github.event.repository.full_name }}
+  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create release
+        run: | 
+          gh release create ${{ inputs.tag }} --repo $REPO
+        shell: bash
+
+  build-app:
+    runs-on: ubuntu-release
+    steps:
+      - name: Runnning build action using reusable 
+        uses: ./.github/actions/
+        with:
+          app-dir: '.'
+
+      - name: Update release with frontend content
+        run: | 
+          cd dist/
+          tar zcvf ${{ github.workspace }}/angular-aks.tar.gz
+          gh release upload ${{ inputs.tag }} ${{ github.workspace }}/angular-aks.tar.gz --repo $REPO
+        shell: bash
