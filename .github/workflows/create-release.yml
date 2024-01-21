@@ -11,7 +11,7 @@ on:
 
 env:
   REPO: ${{ github.event.repository.full_name }}
-  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  GH_TOKEN: ${{ secrets.TOKEN }}
   
 
 jobs:
