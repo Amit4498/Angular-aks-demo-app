@@ -5,7 +5,10 @@ on:
 
 jobs:
   code-ql:
-    uses: ./.github/actions/sonar/
-    with:
-      app-dir: "."
-    secrets: inherit
+    runs-on: [ubuntu-latest]
+    steps:
+    -  uses: actions/checkout@v3
+    -  uses: ./.github/actions/sonar/
+       with:
+         app-dir: "."
+       secrets: inherit
