@@ -21,8 +21,8 @@ jobs:
       working-directory:  "${{ inputs.app-directory }}"
       run: | 
         npm install sonar-scanner --save-dev --legacy-peer-deps
-        sed -i "s|SONAR_TOKEN|${{ secrets.SONAR_TOKEN }}" sonar-project.properties
-        sed -i "s|SONAR_HOST|${{ secrets.SONAR_HOST }}" sonar-project.properties
+        sed -i "s|SONAR_TOKEN|${{ secrets.SONAR_TOKEN }}|" sonar-project.properties
+        sed -i "s|SONAR_HOST|${{ secrets.SONAR_HOST }}|" sonar-project.properties
       shell: bash
 
     - name: Run Sonar Scanning
