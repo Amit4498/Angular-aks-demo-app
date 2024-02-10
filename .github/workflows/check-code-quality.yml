@@ -6,6 +6,7 @@ on:
 jobs:
   code-ql:
     runs-on: [ubuntu-latest]
+    steps:
     - uses: ./.github/actions/sonar/
       with:
         app-directory: "."
