@@ -6,8 +6,8 @@ on:
 jobs:
   code-ql:
     uses: ./.github/actions/sonar/action.yaml@develop
-      with:
-        app-directory: "."
-      secrets: inherit
+    with:
+      app-directory: "."
+    secrets: inherit
 
        
