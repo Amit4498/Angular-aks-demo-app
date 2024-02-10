@@ -18,7 +18,8 @@
     "release:patch": "standard-version --release-as patch && git push --follow-tags origin master",
     "release:minor": "standard-version --release-as minor && git push --follow-tags origin master",
     "release:major": "standard-version --release-as major && git push --follow-tags origin master",
-    "update": "ng update --force"
+    "update": "ng update --force",
+    "sonar": "sonar-scanner"
   },
   "private": true,
   "dependencies": {
