@@ -1,0 +1,11 @@
+name: Check CodeQL
+
+on:
+  workflow_dispatch:
+
+jobs:
+  code-ql:
+  uses: ./.github/sonar/
+  with:
+    app-dir: "."
+  secrets: inherit

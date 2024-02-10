@@ -1,0 +1,36 @@
+name: CodeQl scanning for npm
+
+on:
+  workflow_call:
+    inputs:
+      app-dir:
+        description: "The dir containing package.json"
+        required: true
+        type: string
+    secrets:
+      SONAR_TOKEN:
+        description: The Sonar Auth Token
+        required: true
+
+jobs:
+  scanning-sonar:
+    runs-on: [ubuntu-latest]
+    steps:
+    - uses: actions/scheckout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version-file: "${{ inputs.app-dir }}/.nvmrc"
+
+    - name: Install sonar
+      working-directory:  "${{ inputs.app-dir }}"
+      run: |
+        npm install sonar-scanner --save-dev
+        sed -i "s|SONAR_TOKEN|${{ secrets.SONAR_TOKEN }}" sonar-project.properties
+        sed -i "s|SONAR_HOST|${{ secrets.SONAR_HOST }}" sonar-project.properties
+      shell: bash
+
+    - name: Run Sonar Scanning
+      working-directory:  "${{ inputs.app-dir }}"
+      run: npm run sonar
+      sell: bash
+     
