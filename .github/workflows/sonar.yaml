@@ -20,6 +20,7 @@ jobs:
     - name: Install sonar
       working-directory:  "${{ inputs.app-directory }}"
       run: |
+        npm install 
         npm install sonar-scanner --save-dev
         sed -i "s|SONAR_TOKEN|${{ secrets.SONAR_TOKEN }}" sonar-project.properties
         sed -i "s|SONAR_HOST|${{ secrets.SONAR_HOST }}" sonar-project.properties
