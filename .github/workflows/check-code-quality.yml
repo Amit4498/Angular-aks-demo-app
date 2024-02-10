@@ -11,4 +11,3 @@ jobs:
     -  uses: ./.github/actions/sonar/
        with:
          app-dir: "."
-       secrets: inherit
