@@ -5,9 +5,9 @@ on:
 
 jobs:
   code-ql:
-    uses: ./.github/workflows/sonar.yaml@develop
-      with:
-        app-directory: "."
-      secrets: inherit
+    uses: ./.github/workflows/sonar.yaml
+    with:
+      app-directory: "."
+    secrets: inherit
 
        
