@@ -28,5 +28,5 @@ jobs:
     - name: Run Sonar Scanning
       working-directory:  "${{ inputs.app-directory }}"
       run: npm run sonar
-      sell: bash
+      shell: bash
      
