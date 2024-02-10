@@ -7,10 +7,6 @@ on:
         description: "The dir containing package.json"
         required: true
         type: string
-    secrets:
-      SONAR_TOKEN:
-        description: The Sonar Auth Token
-        required: false
 
 jobs:
   scanning-sonar:
