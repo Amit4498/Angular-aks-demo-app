@@ -5,8 +5,9 @@ on:
 
 jobs:
   code-ql:
-    uses: ./.github/actions/
-    with:
-       app-directory: "."
-    secrets: inherit
+    runs-on: [ubuntu-latest]
+    - uses: ./.github/actions/sonar/
+      with:
+        app-directory: "."
+
        
