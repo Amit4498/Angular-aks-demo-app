@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-release
     steps:
       - name: Running build action using reusable 
-        uses: ./.github/actions/
+        uses: ./.github/actions/node-build/
         with:
           app-dir: '.'
 
