@@ -10,7 +10,7 @@ on:
     secrets:
       SONAR_TOKEN:
         description: The Sonar Auth Token
-        required: true
+        required: false
 
 jobs:
   scanning-sonar:
