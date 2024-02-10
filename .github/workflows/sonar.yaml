@@ -12,7 +12,7 @@ jobs:
   scanning-sonar:
     runs-on: [ubuntu-latest]
     steps:
-    - uses: actions/scheckout@v3
+    - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version-file: '${{ inputs.app-directory }}/.nvmrc'
