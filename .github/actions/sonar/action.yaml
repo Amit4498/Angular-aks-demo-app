@@ -3,7 +3,7 @@ name: CodeQl scanning for npm
 on:
   workflow_call:
     inputs:
-      app-dir:
+      app-directory:
         description: "The dir containing package.json"
         required: true
         type: string
@@ -19,10 +19,10 @@ jobs:
     - uses: actions/scheckout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version-file: '${{ inputs.app-dir }}/.nvmrc'
+        node-version-file: '${{ inputs.app-directory }}/.nvmrc'
 
     - name: Install sonar
-      working-directory:  "${{ inputs.app-dir }}"
+      working-directory:  "${{ inputs.app-directory }}"
       run: |
         npm install sonar-scanner --save-dev
         sed -i "s|SONAR_TOKEN|${{ secrets.SONAR_TOKEN }}" sonar-project.properties
@@ -30,7 +30,7 @@ jobs:
       shell: bash
 
     - name: Run Sonar Scanning
-      working-directory:  "${{ inputs.app-dir }}"
+      working-directory:  "${{ inputs.app-directory }}"
       run: npm run sonar
       sell: bash
      
