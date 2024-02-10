@@ -19,7 +19,7 @@ jobs:
     - uses: actions/scheckout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version-file: "${{ inputs.app-dir }}/.nvmrc"
+        node-version-file: '${{ inputs.app-dir }}/.nvmrc'
 
     - name: Install sonar
       working-directory:  "${{ inputs.app-dir }}"
